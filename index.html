@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="desctiption" content="Сторінка для вивчення верстки за допомогою html та css">
+  <title>Document - I'm here</title>
+  <style>
+    html,
+    body {
+      color: blue;
+
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrapper {
+      width: 100vw;
+      height: 100vh;
+      background-color: #98b5e3;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .widget {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    .widget header {
+      width: 300px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .header-item {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .widget main {
+      padding: 20px;
+    }
+
+    .temperature {
+      font-size: 4em;
+      text-align: center;
+    }
+
+    .weather-conditoin {
+      text-align: center;
+      color: #666;
+    }
+
+    .widget footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .condition-details {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .condition-details .detail-item {
+      align-items: center;
+      gap: 5px;
+      display: flex;
+    }
+
+    .condition-image>img {
+      width: 100px;
+      height: auto;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .reload-btn {
+      display: block;
+      border: 1px #1044a3 solid;
+      background-color: #fff;
+      width: 160px;
+      height: 45px;
+      font-size: 18px;
+      border-radius: 10px;
+      color: #1044a3;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="wrapper">
+    <div id="widget" class="widget hidden">
+      <header>
+        <span id="city" class="city-name header-item"></span>
+        <time id="time" class="time header-item"></time>
+      </header>
+      <main>
+        <div class="temperature">
+          <span id="temperature"></span>°C
+        </div>
+        <div id="condition" class="weather-conditoin">
+          Cloudy
+        </div>
+      </main>
+      <footer>
+        <ul class="condition-details">
+          <li class="detail-item wind-speed">
+            <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/wind-2198945-1842504.png" width="30"
+              height="30" /> <span id="wind-speed"></span> km/h
+          </li>
+          <li class="detail-item humidity">
+            <img
+              src="https://w7.pngwing.com/pngs/65/666/png-transparent-drawing-humidity-indicator-angle-triangle-illustrator-thumbnail.png"
+              width="30" height="30" /> <span id="humidity"></span>%
+          </li>
+          <li class="detail-item cloud">
+            <img src="https://www.freeiconspng.com/thumbs/cloud-icon/cloud-icon-8.png" width="30" height="30" /> <span
+              id="cloud"></span>%
+          </li>
+        </ul>
+
+        <div class="condition-image">
+          <img id="condition-image" />
+        </div>
+      </footer>
+    </div>
+
+    <div id="loader" class="widget">
+      <p>The weather is loading</p>
+    </div>
+
+    <div>
+      <button id="reload" class="reload-btn">Reload</button>
+    </div>
+  </section>
+
+  <script src="./index.js"></script>
+
+</body>
+
+</html>
